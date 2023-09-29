@@ -1,116 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <title>Portfolio</title>
 </head>
 <style>
-  body{
+  :root {
+    --mytextcolor: #CCCCCC;
+  }
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* You can also specify fonts for specific elements if needed */
+h1, h2, h3 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+}
+
+  body {
     margin: 0px;
     padding: 5%;
+    padding-bottom: 0;
     background-color: #1D1D20;
   }
-  .role{
+
+  .role {
     color: #CCCCCC;
     font-size: 50px;
   }
-.text-justify{
-  color: #CCCCCC;
-}
-.icon-container {
-    width: auto;
-    display: flex;
-    align-items: center;
-}
 
-.icon {
+  .text-justify {
+    color: #CCCCCC;
+  }
+
+
+  .icon {
     width: 24px;
     height: 24px;
-    margin-right: 6px; /* Adjust the spacing between the icon and text */
+    margin-right: 6px;
+    /* Adjust the spacing between the icon and text */
     animation: slideLeftToRight 2s linear infinite alternate;
-}
+  }
 
-.see-more-text {
+  .see-more-text {
     color: black;
     font-size: 16px;
     /* No animation applied to the text */
-}
+  }
 
-.icon-container {
+  .icon-container {
     display: flex;
     align-items: center;
-}
+  }
 
-.icon {
+  .icon {
     width: 24px;
     height: 24px;
-    margin-right: 6px; /* Adjust the spacing between the icon and text */
+    margin-right: 6px;
+    /* Adjust the spacing between the icon and text */
     animation: slideLeftToRight .5s linear infinite alternate;
     fill: #CCCCCC;
-}
+  }
 
 
-@keyframes slideLeftToRight {
+  @keyframes slideLeftToRight {
     0% {
-        transform: translateX(0);
+      transform: translateX(0);
     }
+
     100% {
-        transform: translateX(100%); /* Slide to the right within the container width */
+      transform: translateX(100%);
+      /* Slide to the right within the container width */
     }
-}
-.ftr{
-  margin: 10px;
-}
+  }
+
+  .ftr {
+    margin: 10px;
+  }
+
+
+  @media screen and (max-width: 640px) {
+    .scls {
+      text-align: center !important;
+    }
+
+  }
+
+  @media screen and (max-width: 1024px) {
+    .scls {
+      text-align: center !important;
+    }
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #FFF;
+    background-color: #333;
+  }
+
+  /* Add hover effect to the brand */
+  .navbar-brand:hover {
+    color: #FFF;
+  }
+
+  .see-more-text {
+    position: relative;
+    display: inline-block;
+    color: #CCCCCC;
+    text-decoration: none;
+  }
+
+  .see-more-text::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #CCCCCC;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .see-more-text:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 </style>
+
 <body>
 
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01" >
-        <ul class="navbar-nav ms-auto"> 
-          <li class="nav-item">
-            <a href="About.html" class="nav-link animate__animated animate__fadeInRight " href="#" style="color:#CCCCCC;">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="Projects.html" class="nav-link animate__animated animate__fadeInRight" href="#" style="color:#CCCCCC;">Projects</a>
-          </li>
-        </ul>
+  <div class="container" style="margin-top: -5%;">
+    <nav class="navbar navbar-expand-lg" style="margin-bottom: 50px;">
+      <div class="container-fluid">
+        <button style="height: auto; width: auto; background-color: #ffffff; opacity: 70%; border: none;"
+          class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand animate__animated animate__fadeInLeft" href="index.html"
+          style="color:#CCCCCC; text-align: center; "><img src="Logo.png" style="height: 100px; width: 100px;"></a>
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo01" style="text-align: center;">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item ">
+              <a href="About.html" class="nav-link animate__animated animate__fadeInRight" aria-current="page"
+                style="color:#CCCCCC;">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="Projects.html" class="nav-link animate__animated animate__fadeInRight"
+                style="color:#CCCCCC;">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="Contact.html" class="nav-link animate__animated animate__fadeInRight"
+                style="color:#CCCCCC;">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <div class="container" style="margin-top: 5%;">
-    <div class="row">
-      <div class="col-sm-6 md-6 lg-6">
-        <h1 class="role animate__animated animate__fadeInLeft" style="color: #CCCCCC;">RESUME</h1>
-        <p class="text-justify animate__animated animate__fadeInLeft">
-          is simply dummy text of the printing and <a href="# " style="text-decoration: none;">download</a> industry. Lorem Ipsum has been the industry's 
-        </p>
+    </nav>
+    <div class="container" style="margin-top: 5%;">
+      <div class="row">
+        <div class="col-sm-6 md-6 lg-6">
+          <h1 class="role animate__animated animate__fadeInLeft" style="color: #CCCCCC;">RESUME</h1>
+          <p class="text-justify animate__animated animate__fadeInLeft" style="text-align: justify; text-justify: inter-word;">
+            is simply dummy text of the printing and <a href="# " style="text-decoration: none;">download</a> industry.
+            Lorem Ipsum has been the industry's
+          </p>
+        </div>
+
       </div>
-    
-    </div>
-    <div class="icon-container">
-      <span class="see-more-text animate__animated animate__fadeInLeft"><a href="Contact.html" style="color:#CCCCCC;"><p>Contact Me </a></span>
-      <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+      <div class="icon-container">
+        <span class="see-more-text animate__animated animate__fadeInLeft"><a href="Contact.html"
+            style="color:#CCCCCC;text-decoration: none;">
+            <p>Let's Connect
+          </a></span>
+        <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+          clip-rule="evenodd">
           <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883"></path>
-      </svg>
-     
-  </div>
+        </svg>
+
+      </div>
     </div>
-    <br>
-    <br>
-    <div class="container-fluid" style="margin-top: 5%;">
-      <div class="row text-center">
-        <div class="col-lg-6 animate__animated animate__fadeInLeft">
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a class="ftr " href="#"><svg xmlns="http://www.w3.org/2000/svg" style="height: 30px; width: 30px;" x="0px"
+  </div>
+  <br>
+  <br>
+  <div class="footr container" style="margin-top: 8%;">
+    <div class="row scls">
+      <div class="col-lg-4 animate__animated animate__fadeInLeft">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <a class="ftr " href="#"><svg xmlns="http://www.w3.org/2000/svg" style="height: 30px; width: 30px;" x="0px"
                 y="0px" width="100" height="100" viewBox="0 0 48 48">
                 <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path>
                 <path fill="#fff"
@@ -141,24 +234,29 @@
                 y="0px" width="100" height="100" viewBox="0 0 48 48">
                 <path fill="#4caf50" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"></path>
                 <path fill="#1e88e5" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z"></path>
-                <polygon fill="#e53935" points="35,11.2 24,19.45 13,11.2 12,17 13,23.7 24,31.95 35,23.7 36,17"></polygon>
+                <polygon fill="#e53935" points="35,11.2 24,19.45 13,11.2 12,17 13,23.7 24,31.95 35,23.7 36,17">
+                </polygon>
                 <path fill="#c62828"
-                  d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C9.132,8.301,8.228,8,7.298,8h0C4.924,8,3,9.924,3,12.298z"></path>
+                  d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C9.132,8.301,8.228,8,7.298,8h0C4.924,8,3,9.924,3,12.298z">
+                </path>
                 <path fill="#fbc02d"
                   d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341C38.868,8.301,39.772,8,40.702,8h0 C43.076,8,45,9.924,45,12.298z">
                 </path>
               </svg></a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-6">
-          <ul class="list-inline quick-links">
-            <li class="list-inline-item">
-              <p class="animate__animated animate__fadeInUp " style="color: #CCCCCC; "> ©2023 montarilangel@gmail.com </p>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-8 scls" style="text-align: right;">
+        <ul class="list-inline quick-links">
+          <li class="list-inline-item">
+            <p class="crdts animate__animated animate__fadeInUp " style="color: #CCCCCC; "> ©2023
+              montarilangel@gmail.com </p>
+          </li>
+        </ul>
       </div>
     </div>
+  </div>
+  </div>
 </body>
+
 </html>
